@@ -20,6 +20,8 @@ bottom=1in,footskip=0in]{geometry}
 \graphicspath{ {.} }
 \begin{document}
 
+\noindent \textit{Collaborated with Kshitij Grover and Siddharth Murching}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Problem 1
 \section*{Problem 1}
 \subsection*{(a)}
@@ -120,7 +122,7 @@ $\binom{k + n}{2}$. So the average distance is
 \noindent We can observe that we can make this average go to 1 as 
 $n \rightarrow \infty$. Intuitively, this makes sense; we add a bunch of paths
 that are length $1$, and only a few longer ones. Mathematically, we can see that
-the number of longer paths scales linearly with $k$, and the number of paths 
+the number of longer paths scales linearly with $k$ and $n$, and the number of paths 
 of length one scales quadratically with $n$. So for a fixed $k$, if we just
 take $n$ to be extremely large, we can get arbitrary diameter to average distance
 ratios (where the ratios are greater than 1). An example where the diameter
@@ -168,7 +170,7 @@ downloaded. \\
 \[ E[K] = P(A)(t_1 + E[K - 1]) + P(A^c)(t_2 + E[K]) \]
 \[ E[K] = \frac{K}{n} (t_1 + E[K - 1]) + \frac{n - K}{n} (t_2 + E[K]) \]
 
-Knowing that $E[0] = 0$, we can solve to get 
+\noindent Knowing that $E[0] = 0$, we can solve to get 
 
 \[ E[K] = n t_2 H_K + K(t_1 - t_2) \]
 
@@ -177,7 +179,11 @@ as follows. When a server is selected, we know that there are two possibilities.
 We can either download a new chunk, which takes time $t_1$ and reduces the remaining
 number of chunks by 1; or, we can spend time $t_2$, which leaves us with the same
 number of chunks to download. The probabilities for these scenarios are $K / n$
-and $(n - K) / n$, respectively.
+and $(n - K) / n$, respectively.\\
+
+\noindent Then, since we want to download all $n$ chunks, $E[n]$ is the following:
+
+\[ E[n] = n t_2 H_n + n(t_1 - t_2) \]
 
 \subsection*{(c)}
 \subsubsection*{(i)}
@@ -208,19 +214,20 @@ first record, which simplifies the probability expression. Then we can calculate
 expected number of records that we get within the first $M$ steps. We will call this 
 $E[M]$.
 
-\[ E[M] = \sum_{i = 1}^M \frac{1}{i} \]
+\[ E[M] = \sum_{i = 2}^M \frac{1}{i} = \big( \sum_{i = 1}^M \frac{1}{i} \big) - 1 \]
 
 \noindent We do this because the expected number of records we get equals the 
-probability of getting a record at step 1 plus the probability of getting a 
-record at step 2 plus... etc etc. Then, for large $M$, this becomes
+probability of getting a record at step 2 plus the probability of getting a 
+record at step 3 plus... etc etc. Then, for large $M$, this becomes
 
-\[ E[M] = \sum_{i = 1}^M \frac{1}{i} \approx \ln M \]
+\[ E[M] \approx \ln M - 1 \]
 
 \noindent So to find out what $M$ to choose, we can just solve the following (assuming
 $x$ is sufficiently large):
 
-\[ \ln M = x \]
-\[ M = e^x \]
+\[ \ln M - 1 = x \]
+\[ \ln M = x + 1 \]
+\[ M = e^{(x + 1)} \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Problem 3
 \section*{Problem 3}

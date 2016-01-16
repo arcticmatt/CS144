@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1452740115 "hw1.tex" "hw1.pdf" "hw1" 1452740116
+["pdflatex"] 1452845906 "hw1.tex" "hw1.pdf" "hw1" 1452974180
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -47,8 +47,8 @@
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
   "graph1.png" 1452738078 218844 a195ab1c546118008d6156dd53f78bde ""
   "graph2.png" 1452739158 72586 d7e58d738965b0ef7b027d15be5cab06 ""
-  "hw1.aux" 1452740116 8 a94a2480d3289e625eea47cd1b285758 ""
-  "hw1.tex" 1452740115 12386 046181a28f9d3ccad08db4b437f43d61 ""
+  "hw1.aux" 1452845906 8 a94a2480d3289e625eea47cd1b285758 ""
+  "hw1.tex" 1452845905 12657 7322055e2ef6091f824ec9a3c222f50a ""
   (generated)
   "hw1.aux"
   "hw1.pdf"
