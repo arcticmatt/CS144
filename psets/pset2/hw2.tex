@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preamble
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,fullpage}
+\usepackage[a4paper,bindingoffset=0in,left=1in,right=1in,top=1in,
+bottom=1in,footskip=0in]{geometry}
+\newtheorem*{prop}{Proposition}
+%\newcounter{Examplecount}
+%\setcounter{Examplecount}{0}
+\newenvironment{discussion}{\noindent Discussion.}{}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{10pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{CS144 HW 2}
+\rhead{Matt Lim}
+\pagenumbering{gobble}
+\usepackage{graphicx}
+\graphicspath{ {.} }
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Problem 1
+\section*{Problem 1}
+\subsection*{(a)}
+We'll start with
+
+\[ P(D = k) = \binom{n - 1}{k} p^k (1 - p)^{n - 1 - k} \]
+
+\noindent Let's take the limit now
+
+\[ \lim_{n \rightarrow \infty} P(D = k) = \lim_{n \rightarrow \infty} 
+    \binom{n - 1}{k} p^k (1 - p)^{n - 1 - k} \]
+Using $\lambda := (n - 1)p$, we have 
+\[ \lim_{n \rightarrow \infty} P(D = k) = \lim_{n \rightarrow \infty} 
+    \frac{(n - 1)!}{k!(n - 1 - k)!} (\frac{\lambda}{n - 1})^k (1 - \frac{\lambda}{n - 1})^{n - 1 - k} \]
+
+\noindent Let's analyze each of these parts separately, starting with the 
+factorial expression.
+
+\[ \frac{(n - 1)!}{k!(n - 1 - k)!} = \frac{(n - 1)((n - 1) - 1)\cdots((n - 1) - k + 1)}{k!} \]
+The numerator can be approximated as $(n - 1)^k + E$, where
+$E$ represents the terms with powers $k - 1$ or less. As $n \rightarrow \infty$, 
+$E$ effectively goes to zero, as the $(n - 1)^k$ term dominates.
+
+\noindent Now let's analyze the second part, $(\frac{\lambda}{n - 1})^k$. We can
+see that this doesn't need much simplifying. But notice that the denominator here
+will cancel with the numerator we calculated in the first part.
+
+\noindent Finally, let's analyze the third part. We can get the following using the 
+approximation $(1 + \frac{x}{n})^n = e^x$ 
+
+\[ \lim_{n \rightarrow \infty} (1 - \frac{\lambda}{n - 1})^{n - 1 - k} \]
+\[ = (1 - \frac{\lambda}{n - 1})^{n - 1} (1 - \frac{\lambda}{n - 1})^{-k} \]
+\[ = e^{-\lambda} 1^{-k} \]
+\[ = e^{-\lambda} \]
+
+\noindent Now we can put everything together.
+\[ \lim_{n \rightarrow \infty} P(D = k) = \frac{(n - 1)^k }{k!} (\frac{\lambda}{n - 1})^k
+    e^{-\lambda} \]
+\[ \lim_{n \rightarrow \infty} P(D = k) = \frac{e^{-\lambda} \lambda^k}{k!} \]
+
+\end{document}
